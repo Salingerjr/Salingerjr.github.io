@@ -5,30 +5,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<script>
-	function plusDivs(n, tag) {
-		var m = +(document.getElementsByClassName("slides-" + tag)[0].getAttribute("data-active"));
-		showDivs(m += n, tag);
-	}
 
-	function showDivs(n, tag) {
-		var i;
-		var x = document.getElementsByClassName("slide-" + tag);
-		var dots = document.getElementsByClassName("circle-" + tag);
-		var slides = document.getElementsByClassName("slides-" + tag);
-		var images = slides[0].getAttribute("data-images").split(",");;
-		n %= images.length;
-		if (n < 0) n = images.length-1;
-		for (i = 0; i < dots.length; i++) {
-			 dots[i].className = dots[i].className.replace(" w3-white", "");
-		}
-
-		// x[slideIndex-1].style.display = "block";
-		slides[0].style.backgroundImage = 'url(' + images[n] + ')';
-		slides[0].setAttribute("data-active", n);
-		dots[n].className += " w3-white";
-	}
-	</script>
 	<head>
 		<title>Jamie Salinger | Stage Manager</title>
 		<meta charset="utf-8" />
@@ -259,21 +236,21 @@
 							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
 							<div class="split style1">
 								<section>
-									<form method="post" action="#">
+									<form method="post" action="mailto:deleurapps@gmail.com" enctype="text/plain">
 										<div class="field half first">
 											<label for="name">Name</label>
 											<input type="text" name="name" id="name" />
 										</div>
 										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
+											<label for="mail">Email</label>
+											<input type="text" name="mail" id="email" />
 										</div>
 										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="5"></textarea>
+											<label for="comment">Message</label>
+											<textarea name="comment" id="message" rows="5"></textarea>
 										</div>
 										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
+											<li><a href="" class="button submit" type="submit">Send Message</a></li>
 										</ul>
 									</form>
 								</section>
@@ -328,6 +305,30 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script>
+			function plusDivs(n, tag) {
+				var m = +(document.getElementsByClassName("slides-" + tag)[0].getAttribute("data-active"));
+				showDivs(m += n, tag);
+			}
+
+			function showDivs(n, tag) {
+				var i;
+				var x = document.getElementsByClassName("slide-" + tag);
+				var dots = document.getElementsByClassName("circle-" + tag);
+				var slides = document.getElementsByClassName("slides-" + tag);
+				var images = slides[0].getAttribute("data-images").split(",");;
+				n %= images.length;
+				if (n < 0) n = images.length-1;
+				for (i = 0; i < dots.length; i++) {
+					 dots[i].className = dots[i].className.replace(" w3-white", "");
+				}
+
+				// x[slideIndex-1].style.display = "block";
+				slides[0].style.backgroundImage = 'url(' + images[n] + ')';
+				slides[0].setAttribute("data-active", n);
+				dots[n].className += " w3-white";
+			}
+			</script>
 
 	</body>
 </html>
