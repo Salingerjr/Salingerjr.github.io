@@ -1,0 +1,11 @@
+@media screen and (max-width: 1280px){
+  #sidebar nav .image, #sidebar nav img {
+  	height: inherit;
+  	line-height: inherit;
+  	padding: 0;
+  }
+
+  #sidebar nav img {
+  	width: auto;
+  }
+}
